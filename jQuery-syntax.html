@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title></title>
+    <link rel="stylesheet" href="./jQuery-syntax.css" />
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -10,33 +11,43 @@
     <title>jQuery syntax</title>
   </head>
   <body>
-    <style>
-      p {
-        color: blue;
-      }
-    </style>
     <p id="test">This is a paragraph.</p>
     <p class="test">This is another paragraph.</p>
     <p name="test">This is another paragraph.</p>
     <br />
     <br />
     <br />
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aliquid
-      provident commodi beatae ratione deserunt? Modi dicta ab recusandae illum
-      tenetur voluptates perspiciatis maxime ullam porro nesciunt suscipit
-      cumque voluptate nemo id fugiat voluptatibus consectetur, cupiditate
-      aspernatur magni autem. Rerum debitis eos et optio asperiores sed ipsa
-      laborum alias exercitationem enim aliquid delectus similique placeat
-      obcaecati at deleniti, distinctio provident libero quo fugit dolorum,
-      ducimus dicta. Fuga aliquam facilis ducimus, repudiandae veritatis
-      consectetur quas nesciunt perspiciatis ea dolor. Quo eligendi esse modi
-      harum, numquam error dolores. Aliquid, culpa. Illum odit natus doloremque
-      incidunt. Blanditiis, esse. A assumenda odio dignissimos modi.
+    <div class="target">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A natus ea
+      accusantium. Reprehenderit, iure. Nobis impedit, libero recusandae,
+      similique rem sunt voluptatibus in officiis consectetur culpa, dolores
+      doloremque. Soluta quo possimus adipisci, velit labore voluptas, inventore
+      pariatur eaque ullam magnam obcaecati! Tenetur, in sapiente cupiditate
+      voluptatem aut rem unde laboriosam.
     </div>
+    <br />
+    <br />
+    <br />
 
+    <h1 id="modify">Hello World!</h1>
+
+    <p id="pModify">Hello World, this is Abbu Tulu!</p>
+
+    <br />
+    <br />
+    <br />
+    <div class="content-box">
+      <p class="content-before">Click me to see more!</p>
+      <p class="content-after">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit odit et
+        facilis, qui unde quo nam fugiat totam nisi distinctio autem minima
+        laboriosam a culpa, ullam perspiciatis quibusdam hic molestias quos vero
+        sint est! Nobis et odio iste aperiam illum.
+      </p>
+    </div>
     <script>
-      /*$("#test").click(function () {
+      // Selection of DOM elements (CSS, ID, Name, etc)
+      $("#test").click(function () {
         $(this).hide();
       });
       $(".test").click(function () {
@@ -44,11 +55,44 @@
       });
       $('[name="test"]').click(function () {
         $(this).hide();
-      });*/
-      $("p"),
-        $("div").click(function () {
+      });
+
+      // Work with collections of elements
+      /*$("p,div").click(function () {
           $(this).hide();
+        });*/
+
+      // Creating/appending/prepending DOM elements
+      $(".target").before("<div class='child'>Before</div>");
+
+      $(".target").append("<div class='child'>Append</div>");
+
+      $(".target").prepend("<div class='child'>Prepend</div>");
+
+      $(".target").after("<div class='child'>After</div>");
+
+      // Modifying and removing existing DOM elements (attributes, content)
+      $("#modify").text("Introduction");
+      $("#modify").css("color", "blue");
+      $("#pModify").html("Hello world, this is <strong>Abbu Tulu</strong>");
+      $("#pModify").css("color", "green");
+      $("#modify,#pModify").addClass("modify");
+      // $("#modify").remove(); /* empty() removes all the content within the element */
+      // $("#pModify").remove(); /* certain elements can be filtered if they are typed within the parentheses */
+
+      // Perform basic animations
+      $(document).ready(function () {
+        $(".content-box").click(function () {
+          $(".content-box").animate(
+            {
+              width: "500px",
+              height: "+=200px",
+            },
+            1000
+          );
+          $(".content-after").show().animate({ opacity: "1" }, 3000);
         });
+      });
     </script>
   </body>
 </html>
