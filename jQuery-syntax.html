@@ -8,6 +8,7 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script src="./responsiveslides.min.js"></script>
     <title>jQuery syntax</title>
   </head>
   <body>
@@ -45,6 +46,32 @@
         sint est! Nobis et odio iste aperiam illum.
       </p>
     </div>
+    <br />
+    <br />
+    <br />
+    <ul class="rslides">
+      <li>
+        <blockquote>
+          1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
+          maiores impedit exercitationem quibusdam velit dolore ea, recusandae
+          soluta eligendi, ex cupiditate facilis!
+        </blockquote>
+      </li>
+      <li>
+        <blockquote>
+          2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
+          maiores impedit exercitationem quibusdam velit dolore ea, recusandae
+          soluta eligendi, ex cupiditate facilis!
+        </blockquote>
+      </li>
+      <li>
+        <blockquote>
+          3 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
+          maiores impedit exercitationem quibusdam velit dolore ea, recusandae
+          soluta eligendi, ex cupiditate facilis!
+        </blockquote>
+      </li>
+    </ul>
     <script>
       // Selection of DOM elements (CSS, ID, Name, etc)
       $("#test").click(function () {
@@ -92,6 +119,11 @@
           );
           $(".content-after").show().animate({ opacity: "1" }, 3000);
         });
+      });
+
+      // Integrate 3rd party plugins to get functionality without having to create it
+      $(document).ready(function () {
+        $(".rslides").responsiveSlides();
       });
     </script>
   </body>
