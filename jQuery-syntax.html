@@ -86,8 +86,8 @@
 
       // Work with collections of elements
       /*$("p,div").click(function () {
-          $(this).hide();
-        });*/
+        $(this).hide();
+      });*/
 
       // Creating/appending/prepending DOM elements
       $(".target").before("<div class='child'>Before</div>");
@@ -100,12 +100,16 @@
 
       // Modifying and removing existing DOM elements (attributes, content)
       $("#modify").text("Introduction");
-      $("#modify").css("color", "blue");
+      $("#modify").css("color", "aqua");
       $("#pModify").html("Hello world, this is <strong>Abbu Tulu</strong>");
       $("#pModify").css("color", "green");
       $("#modify,#pModify").addClass("modify");
-      // $("#modify").remove(); /* empty() removes all the content within the element */
-      // $("#pModify").remove(); /* certain elements can be filtered if they are typed within the parentheses */
+      /*$(
+        "#modify"
+      ).remove(); /* empty() removes all the content within the element */
+      /*$(
+        "#pModify"
+      ).remove(); /* certain elements can be filtered if they are typed within the parentheses */
 
       // Perform basic animations
       $(document).ready(function () {
